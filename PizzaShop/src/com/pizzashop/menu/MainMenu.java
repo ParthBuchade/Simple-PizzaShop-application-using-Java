@@ -13,7 +13,6 @@ public class MainMenu {
 		System.out.println("0. EXIT");
 		System.out.println("1. Login");
 		System.out.println("2. Register");
-		System.out.println("3. Admin");
 		System.out.println("***********************************");
 		System.out.println("Enter your choice - ");
 		int choice = sc.nextInt();
@@ -46,19 +45,6 @@ public class MainMenu {
 		return null;
 	}
 
-	public static Admin loginAdmin(Scanner sc) {
-		String username, password;
-		Admin ad = new Admin();
-		System.out.print("Enter username/Email- ");
-		username = sc.next();
-		System.out.println("Enter password - ");
-		password = sc.next();
-		if (username.equals(ad.getUsername()) && password.equals(ad.getPassword())) {
-			return ad;
-		}
-		return null;
-	}
-
 	public static void main(String[] args) {
 		int choice = 0;
 		Scanner sc = new Scanner(System.in);
@@ -76,15 +62,6 @@ public class MainMenu {
 				break;
 			case 2:
 				registerCust(sc);
-				break;
-
-			case 3:
-				Admin add = loginAdmin(sc);
-				if (add == null)
-					System.out.println("Invalid Credentials...:(");
-				else {
-					System.out.println("Admin login successful...:)");
-				}
 				break;
 			default:
 				System.out.println("Wrong choice...");
